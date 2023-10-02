@@ -60,18 +60,31 @@ const postToInstagramDeployed = async (id) => {
 
     console.log(publishResult)
 }
-// postToInstagramLocal(index)
 
 let  index = 0
-const cronInsta = new CronJob("*/30 * * * *", async () => {
-    if (index < images.length) {
+app.get('/api/cron', (req, res)=>{
+    try {
         postToInstagramDeployed(index);
-        index += 1;
-      } else {
-        cronInsta.stop(); // Stop the cron job if all images have been uploaded.
-      }
-});
+        index+=1;
+        console.log('success')
+        res.redirect('/')
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+})
+// postToInstagramLocal(index)
 
-cronInsta.start();
+// let  index = 0
+// const cronInsta = new CronJob("*/30 * * * *", async () => {
+//     if (index < images.length) {
+//         postToInstagramDeployed(index);
+//         index += 1;
+//       } else {
+//         cronInsta.stop(); // Stop the cron job if all images have been uploaded.
+//       }
+// });
+
+// cronInsta.start();
 
 // https://chachoapa124.imgur.com/all/
