@@ -63,9 +63,9 @@ const postToInstagramDeployed = async (id) => {
 }
 
 let  index = 0
-app.get('/api/cron', async (req, res)=>{
+app.get('/api/cron', (req, res)=>{
     try {
-        const result = await postToInstagramDeployed(index);
+        postToInstagramDeployed(index);
         index+=1;
         console.log(result)
         res.send('DONE')
