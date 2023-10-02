@@ -55,17 +55,21 @@ const postToInstagramDeployed = async (id) => {
 
     const publishResult = await ig.publish.photo({
         file: imageBuffer,
-        caption: 'Cronjob from vercel server',
+        // caption: 'Cronjob from vercel server',
     });
 
     console.log(publishResult)
 }
 // postToInstagramLocal(index)
 
-let  index = 1
+let  index = 0
 const cronInsta = new CronJob("30 20 * * */7", async () => {
-    postToInstagramDeployed(index); 
-    index+=1;
+    if (index < images.length) {
+        postToInstagramDeployed(index);
+        index += 1;
+      } else {
+        cronInsta.stop(); // Stop the cron job if all images have been uploaded.
+      }
 });
 
 cronInsta.start();
