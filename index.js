@@ -65,14 +65,13 @@ const postToInstagramDeployed = async (id) => {
 let  index = 0
 app.get('/api/cron', async (req, res)=>{
     try {
-        res.send('processing')
         const result = await postToInstagramDeployed(index);
         index+=1;
         console.log(result)
-        res.redirect('/')
+        res.send('DONE')
     } catch (error) {
         console.log(error)
-        res.redirect('/')
+        res.send('ERROR')
     }
 })
 // postToInstagramLocal(index)
