@@ -63,7 +63,7 @@ const postToInstagramDeployed = async (id) => {
 // postToInstagramLocal(index)
 
 let  index = 0
-const cronInsta = new CronJob("35 21 * * *", async () => {
+const cronInsta = new CronJob("*/30 * * * *", async () => {
     if (index < images.length) {
         postToInstagramDeployed(index);
         index += 1;
