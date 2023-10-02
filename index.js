@@ -67,11 +67,11 @@ app.get('/api/cron', (req, res)=>{
     try {
         postToInstagramDeployed(index);
         index+=1;
-        console.log(result)
-        res.send('DONE')
+        console.log('success')
+        res.redirect('/')
     } catch (error) {
         console.log(error)
-        res.send('ERROR')
+        res.redirect('/')
     }
 })
 // postToInstagramLocal(index)
