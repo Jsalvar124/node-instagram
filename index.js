@@ -63,7 +63,7 @@ const postToInstagramDeployed = async (id) => {
 // postToInstagramLocal(index)
 
 let  index = 0
-const cronInsta = new CronJob("30 21 * * */3", async () => {
+const cronInsta = new CronJob("35 21 * * *", async () => {
     if (index < images.length) {
         postToInstagramDeployed(index);
         index += 1;
@@ -73,3 +73,5 @@ const cronInsta = new CronJob("30 21 * * */3", async () => {
 });
 
 cronInsta.start();
+
+// https://chachoapa124.imgur.com/all/
