@@ -14,7 +14,7 @@
     ],
     "functions": {
         "cronjob": {
-          "handler": "cronjob.js"
+          "includeFiles": "cronjob.js"
         }
       },
     "crons": [
