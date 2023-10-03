@@ -17,13 +17,12 @@
       }
     ],
     "crons": [
-      {
-        "function": "cronjob",
-        "schedule": "0 21 * * *",
-        "path": "/api/cronjob" 
-      }
-    ]
-  }
-  
+        {
+          "schedule": "0 21 * * *",
+          "path": "/api/cronjob"
+        }
+      ]
+}
+
   
   
