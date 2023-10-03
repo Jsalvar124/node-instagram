@@ -1,17 +1,16 @@
-const cron = require('node-cron');
-const { postToInstagramDeployed } = require('./index.js'); // Import your Instagram posting functions
+const { postToInstagramDeployed } = require('./index.js'); // Import your Instagram posting function
 
-// Schedule the cron job to run at a specific time
-let  index = 0
-cron.schedule('0 20 * * *', () => {
+module.exports = async (req, res) => {
   try {
     console.log('Cron job started');
-    console.log('Cron job executed at', new Date())
+    console.log('Cron job executed at', new Date());
     // Call your Instagram posting function here
-    postToInstagramDeployed(index);
+    await postToInstagramDeployed(index); // Make sure to handle any necessary asynchronous operations
     console.log('Cron job completed');
-    index+=1;
+    index += 1;
+    res.status(200).send('Cron job completed');
   } catch (error) {
     console.error('Cron job error:', error);
+    res.status(500).send('Cron job error');
   }
-});
+};
