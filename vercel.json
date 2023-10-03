@@ -10,14 +10,20 @@
       {
         "src": "/(.*)",
         "dest": "/"
+      },
+      {
+        "src": "/api/cron",
+        "dest": "/api/cronjob"
       }
     ],
     "crons": [
       {
+        "function": "cronjob",
         "schedule": "0 21 * * *",
-        "function": "cronjob"
+        "path": "/api/cronjob" 
       }
     ]
   }
+  
   
   
