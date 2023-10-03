@@ -12,10 +12,15 @@
         "dest": "/"
       }
     ],
+    "functions": {
+        "cronjob": {
+          "handler": "cronjob.js"
+        }
+      },
     "crons": [
         {
-          "path": "/api/cron",
-          "schedule": "0 17 * * *"
+          "function": "cronjob",
+          "schedule": "0 20 * * *"
         }
       ]
 }

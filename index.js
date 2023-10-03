@@ -4,9 +4,8 @@ const { get } = require('request-promise')
 const { readFile } = require('fs');
 const { promisify } = require('util');
 const readFileAsync = promisify(readFile);
-const CronJob = require("cron").CronJob;
+// const CronJob = require("cron").CronJob;
 const images = require('./images.js')
-console.log(images[0])
 
 //Server
 const express = require('express')
@@ -62,18 +61,18 @@ const postToInstagramDeployed = async (id) => {
     return(publishResult)
 }
 
-let  index = 0
-app.get('/api/cron', (req, res)=>{
-    try {
-        postToInstagramDeployed(index);
-        index+=1;
-        console.log('success')
-        res.redirect('/')
-    } catch (error) {
-        console.log(error)
-        res.redirect('/')
-    }
-})
+// let  index = 0
+// app.get('/api/cron', async (req, res)=>{
+//     try {
+//         const result = await postToInstagramDeployed(index)
+//         index+=1;
+//         console.log(result)
+//         res.send('Cron Job')
+//     } catch (error) {
+//         console.log(error)
+//         res.send('Cron Job Error')
+//     }
+// })
 // postToInstagramLocal(index)
 
 // let  index = 0
@@ -89,3 +88,5 @@ app.get('/api/cron', (req, res)=>{
 // cronInsta.start();
 
 // https://chachoapa124.imgur.com/all/
+
+module.exports = {postToInstagramDeployed}
