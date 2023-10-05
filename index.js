@@ -1,9 +1,13 @@
 //Server
 const express = require('express');
+const cors = require('cors');
 const handler = require('./cronjob.js');
 const images = require('./images.js')
 const app = express()
 const port = process.env.PORT || 4000;
+
+// Enable CORS for all routes
+app.use(cors());
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}, http://localhost:${port}`)
