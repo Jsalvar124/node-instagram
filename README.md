@@ -27,6 +27,7 @@ Before you begin, ensure you have met the following requirements:
 - Node.js and npm installed on your local machine.
 - Instagram account credentials (username and password).
 - GitHub account (for storing and updating the posting index).
+-  Instagram supports three available aspect ratios for your photos and videos: square (1:1), portrait (4:5), and landscape (1.91:1). Ensure your images conform to one of these aspect ratios to be compatible with Instagram's posting requirements.
 
 ## Installation
 
