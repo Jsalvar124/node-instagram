@@ -98,7 +98,7 @@ The cron job for scheduled Instagram posts is already set up in the `vercel.json
   }
 ]
 ```
-This configuration schedules the /api/cron endpoint to run every day at 6:00 PM (18:00). You can adjust the cron schedule according to your preferences by modifying the "schedule" value in the vercel.json file. Keep in mind that Vercel allows up to 3 free projects, and 2 cronJobs per project that can be triggered once per day. 
+This configuration schedules the /api/cron endpoint to run every day at 6:00 PM (18:00 UTC, which is 13:00 in Colombia). You can adjust the cron schedule according to your preferences by modifying the "schedule" value in the vercel.json file. Keep in mind that Vercel allows up to 3 free projects, and 2 cronJobs per project that can be triggered once per day. 
 
 
 ## Usage
