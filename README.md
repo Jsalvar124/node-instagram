@@ -41,9 +41,9 @@ cd node-instagram
 ```
 3. Install the project dependencies:
 ```
-cd node-instagram
-```
 npm install
+```
+
 
 ## Configuration
 
