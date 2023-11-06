@@ -143,7 +143,7 @@ const handler = async (req, res) => {
 // const testGistFetch = async () =>{
 //   let index = await getIndexFromGist()
 //   console.log(index)
-//   let newIndexObj = {currentIndex: 0}
+//   let newIndexObj = {currentIndex: 31}
 //   await updateIndexInGist(newIndexObj);
 //   console.log(newIndexObj)
 // }
